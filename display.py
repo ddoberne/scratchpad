@@ -3,7 +3,7 @@ from transformers import pipeline
 
 @st.cache
 def load_generator():
-  generator = pipeline('text-generation', model = 'gpt2-large')
+  generator = pipeline('text-generation', model = 'gpt2')
   return generator
 
 @st.cache
