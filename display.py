@@ -3,12 +3,12 @@ from transformers import pipeline
 
 @st.cache
 def load_generator():
-  generator = pipeline('text-generation')
+  generator = pipeline('text-generation', model = 'gpt2-large')
   return generator
 
 @st.cache
 def load_classifier():
-  classifier = pipeline('sentiment-analysis')
+  classifier = pipeline('sentiment-analysis', model = 'distilbert-base-uncased-finetuned-sst-2-english')
 
 classifier = load_classifier()
 generator = load_generator()
