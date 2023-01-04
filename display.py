@@ -15,7 +15,7 @@ classifier = load_classifier()
 
 st.title('How are you feeling today?')
 s = st.text_input(label = 'I am feeling...')
-response = None
+response = "null"
 if s:
   output = classifier(s)[0]
   if output['score'] > 0.75:
@@ -27,7 +27,7 @@ if s:
     response = ':neutral_face:'
   st.title(response)
   
-response = None
+response = "null"
 if response == ':slightly_frowning_face:':
   if st.button(label = 'Turn that frown upside down!'):
     while output['label'] == 'NEGATIVE':
