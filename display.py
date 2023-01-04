@@ -2,7 +2,6 @@ import streamlit as st
 from transformers import pipeline
 
 
-@st.cache
 def load_generator():
   generator = pipeline('text-generation')
   return generator
