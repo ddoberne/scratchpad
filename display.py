@@ -1,10 +1,10 @@
 import streamlit as st
 from transformers import pipeline
-"""
+
 @st.cache
 def load_generator():
   generator = pipeline('text-generation', model = 'gpt2')
-  return generator"""
+  return generator
 
 @st.cache
 def load_classifier():
