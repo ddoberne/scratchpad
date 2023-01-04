@@ -1,12 +1,16 @@
 import streamlit as st
 from transformers import pipeline
 
-
+@st.cache
 def load_generator():
   generator = pipeline('text-generation')
   return generator
 
-classifier = pipeline("sentiment-analysis")
+@st.cache
+def load_classifier():
+  classifier = pipeline('sentiment-analysis')
+
+classifier = load_classifier()
 generator = load_generator()
 
 st.title('How are you feeling today?')
