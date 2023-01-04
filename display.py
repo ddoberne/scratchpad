@@ -4,7 +4,7 @@ from transformers import pipeline
 classifier = pipeline("sentiment-analysis")
 
 st.title('How are you feeling today?')
-s = st.text_input()
+s = st.text_input(label = 'I am feeling...')
 output = classifier(s)
 if output['score'] > 0.75:
   if output['label'] == 'POSITIVE':
