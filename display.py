@@ -14,4 +14,4 @@ if s:
       response = ':slightly_frowning_face:'
   else:
     response = ':neutral_face:'
-  st.write(response)
+  st.title(response)
