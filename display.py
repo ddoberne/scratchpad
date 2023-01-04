@@ -9,6 +9,7 @@ def load_generator():
 @st.cache
 def load_classifier():
   classifier = pipeline('sentiment-analysis', model = 'distilbert-base-uncased-finetuned-sst-2-english')
+  return classifier
 
 classifier = load_classifier()
 #generator = load_generator()
