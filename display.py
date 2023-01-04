@@ -5,12 +5,13 @@ classifier = pipeline("sentiment-analysis")
 
 st.title('How are you feeling today?')
 s = st.text_input(label = 'I am feeling...')
-output = classifier(s)
-if output['score'] > 0.75:
-  if output['label'] == 'POSITIVE':
-    response = ':slightly_smiling_face:'
+if s:
+  output = classifier(s)
+  if output['score'] > 0.75:
+    if output['label'] == 'POSITIVE':
+      response = ':slightly_smiling_face:'
+    else:
+      response = ':slightly_frowning_face:'
   else:
-    response = ':slightly_frowning_face:'
-else:
-  response = ':neutral_face:'
-st.write(response)
+    response = ':neutral_face:'
+  st.write(response)
