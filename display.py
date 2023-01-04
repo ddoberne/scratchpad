@@ -1,17 +1,17 @@
 import streamlit as st
 from transformers import pipeline
-
+"""
 @st.cache
 def load_generator():
   generator = pipeline('text-generation', model = 'gpt2')
-  return generator
+  return generator"""
 
 @st.cache
 def load_classifier():
   classifier = pipeline('sentiment-analysis', model = 'distilbert-base-uncased-finetuned-sst-2-english')
 
 classifier = load_classifier()
-generator = load_generator()
+#generator = load_generator()
 
 st.title('How are you feeling today?')
 s = st.text_input(label = 'I am feeling...')
@@ -27,6 +27,7 @@ if s:
     response = ':neutral_face:'
   st.title(response)
   
+response = None
 if response == ':slightly_frowning_face:':
   if st.button(label = 'Turn that frown upside down!'):
     while output['label'] == 'NEGATIVE':
